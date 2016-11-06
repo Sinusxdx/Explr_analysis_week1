@@ -39,6 +39,7 @@ x <- x[-1,]
                                           #otherwise they are in German
     
     # We use png function to save our image
+    # cex is used to make the label size right
     
     png("plot4.png",  width = 1200, height = 1200, units = "px") 
     par(mfrow = c(2,2), oma=c(0,2,0,0), mar =c(4.5,5,2.1,2.1))
@@ -51,7 +52,7 @@ x <- x[-1,]
      lines(tt, x[,8], type = "l", col = "red", xlab = '', lwd = 2)
      lines(tt, x[,9], type = "l", col = "blue", xlab = '', lwd = 2)
      legend("topright", lty = 1, col = c("black", "red", "blue"), # adds legend
-            lwd = 2, c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+       cex = 2,  lwd = 2, c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
      plot(tt, x$Global_reactive_power, type = "l", cex.lab=2,
           xlab = '', ylab = "Global_reactive_power", lwd = 2, cex.axis = 2)
       dev.off()
